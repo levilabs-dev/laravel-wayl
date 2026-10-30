@@ -1,0 +1,96 @@
+{
+    "name": "levilabs/laravel-wayl",
+    "description": "Modern Laravel SDK for Wayl (Iraq): payment links, status checks, invalidation, refunds, product catalog reads, and HMAC-verified webhooks.",
+    "keywords": [
+        "laravel",
+        "wayl",
+        "thewayl",
+        "payment",
+        "gateway",
+        "refund",
+        "webhook",
+        "sdk",
+        "iraq",
+        "levilabs"
+    ],
+    "homepage": "https://levilabs.dev",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/levilabs-dev/laravel-wayl/issues",
+        "source": "https://github.com/levilabs-dev/laravel-wayl",
+        "docs": "https://github.com/levilabs-dev/laravel-wayl#readme",
+        "security": "https://github.com/levilabs-dev/laravel-wayl/security"
+    },
+    "authors": [
+        {
+            "name": "Levi Labs",
+            "email": "hello@levilabs.dev",
+            "homepage": "https://levilabs.dev",
+            "role": "Organization"
+        },
+        {
+            "name": "Nizam Omer",
+            "email": "nizam@nizaamomer.com",
+            "homepage": "https://nizaamomer.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/database": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.22",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^3.8|^4.4",
+        "pestphp/pest-plugin-laravel": "^3.2|^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeviLabs\\LaravelWayl\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LeviLabs\\LaravelWayl\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "audit": {
+            "block-insecure": false
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "LeviLabs\\LaravelWayl\\WaylServiceProvider"
+            ],
+            "aliases": {
+                "WaylLink": "LeviLabs\\LaravelWayl\\Facades\\WaylLink",
+                "WaylProduct": "LeviLabs\\LaravelWayl\\Facades\\WaylProduct",
+                "WaylRefund": "LeviLabs\\LaravelWayl\\Facades\\WaylRefund"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
